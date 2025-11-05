@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "next": "14.2.32",
     "node-fetch": "^3.2.10",
     "sass": "^1.52.3",
