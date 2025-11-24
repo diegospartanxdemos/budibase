@@ -56,7 +56,7 @@
     "@budibase/string-templates": "*",
     "@budibase/types": "*",
     "@bull-board/api": "5.10.2",
-    "@bull-board/koa": "5.10.2",
+    "@bull-board/koa": "6.3.0",
     "@elastic/elasticsearch": "7.10.0",
     "@google-cloud/firestore": "7.8.0",
     "@koa/cors": "5.0.0",
