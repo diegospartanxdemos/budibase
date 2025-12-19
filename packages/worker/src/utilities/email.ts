@@ -13,6 +13,7 @@ import { configs, cache, objectStore, HTTPError } from "@budibase/backend-core"
 import ical from "ical-generator"
 import _ from "lodash"
 import { marked } from "marked"
+import DOMPurify from "isomorphic-dompurify"
 
 import nodemailer from "nodemailer"
 import SMTPTransport from "nodemailer/lib/smtp-transport"
@@ -100,7 +101,8 @@ async function buildEmail(
     ...context,
     contents:
       purpose === EmailTemplatePurpose.CUSTOM
-        ? marked.parse(contents || "")
+        ? // Sanitize Markdown-rendered HTML to prevent stored XSS in custom templates
+          DOMPurify.sanitize(marked.parse(contents || ""))
         : contents,
     email,
     name,
